@@ -69,9 +69,9 @@ class _ChatPageState extends State<ChatPage> {
   Widget build(BuildContext context) {
     String currentUsername = 'unknown';
     if (meteor.userCurrentValue() != null &&
-        meteor.userCurrentValue()['username'] != null) {
+        meteor.userCurrentValue()!['username'] != null) {
       currentUsername =
-          '${meteor.userCurrentValue()['profile']['name']} ${meteor.userCurrentValue()['profile']['surname']}';
+          '${meteor.userCurrentValue()!['profile']['name']} ${meteor.userCurrentValue()!['profile']['surname']}';
     }
 
     return Scaffold(

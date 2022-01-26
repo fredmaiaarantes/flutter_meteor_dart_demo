@@ -20,8 +20,10 @@ class MyApp extends StatelessWidget {
           stream: meteor.status(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              if (snapshot.data!.connected) {
-                return StreamBuilder<Map<String, dynamic>>(
+              print(snapshot);
+              print(snapshot.data);
+              if (snapshot.data?.status == DdpConnectionStatusValues.connected) {
+                return StreamBuilder(
                   stream: meteor.user(),
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
